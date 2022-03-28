@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="title-zone">
+    <header>
         <h1 id="title">Math Divisions</h1>
     
         <h1 id="intro-label"><strong>Introduction</strong></h1>
@@ -22,37 +22,39 @@
             divided evenly between 4 people, everyone <br>
             receives 5 apples.
         </p>
-    </div>
+    </header>
     
     <section class="zone" id="num-dividers">
         <h2 class="sub-title"><strong>Dividers</strong></h2>
 
-        <div>
-            <h3 id="output">OUTPUT</h3>
+        <div class="output-box">
+            <h3 class="output" id="output-dividers"></h3>
         </div>
 
         <div class="options">
-            <h4>Settings</h4>
+            <h4 class="settings-title">Settings</h4>
             <p class="label">Number</p>
             <input type="text" class="txt" id="dividers-num-value">
         </div>
+        <br><br>
     </section>
 
     <section class="zone" id="commun-dividers">
         <h2 class="sub-title"><strong>Commun Dividers</strong></h2>
 
-        <div>
-            <h3>OUTPUT</h3>
+        <div class="output-box">
+            <h3 class="output" id="output-commun-dividers"></h3>
         </div>
 
         <div class="options">
-            <h4>Settings</h4>
+            <h4 class="settings-title">Settings</h4>
             <p class="label">Number 1</p>
             <input type="text" class="txt" id="commun-dividers-num-1">
             <br>
             <p class="label">Number 2</p>
             <input type="text" class="txt" id="commun-dividers-num-1">
         </div>
+        <br>
     </section>
 
     <script src="index.js"></script>
