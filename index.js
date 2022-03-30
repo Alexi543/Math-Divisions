@@ -5,12 +5,17 @@ const DIVIDERS_NUMBER = document.getElementById("dividers-num-value");
 const clearInputToNumber = (input) => {
     input = String(input);
 
-    if (input === "" || undefined || NaN || []) return 0;
+    if (input === "" || input === undefined || input === []) return 0;
+
+    console.log(1);
 
     input = String(input).split("");
     input = input.filter(x => DIGITS.indexOf(x) !== -1);
 
     if (input === []) return 0;
+
+    input = String(input);
+    input = input.filter(x => [","].indexOf(x) === -1);
 
     // console.log(`${input} --- ${input.split(",").length-1}`); //debug
 
@@ -28,9 +33,7 @@ BUTTONS.forEach(button => {
             let number = clearInputToNumber(DIVIDERS_NUMBER.value);
 
             for (let i = 1; i <= number; i++) {
-                if (Math.floor(number / i) * i == number) {
-                    dividersList.push(i);
-                }
+                if (Math.floor(number / i) * i === number) dividersList.push(i);
             }
 
             // dividersList = String(dividersList).split("").filter(x => delList.indexOf(x) !== -1).toString;
