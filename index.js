@@ -3,11 +3,22 @@ const DIVIDERS_OUTPUT = document.getElementById("output-dividers");
 const DIVIDERS_NUMBER = document.getElementById("dividers-num-value");
 
 const clearInputToNumber = (input) => {
-    input = input.split("");
-    if (input === undefined || input === NaN) return 0;
-    input = input.filter(x => digits.indexOf(x) !== -1);
-    if (input.length === 0) return 0;
     input = String(input);
+
+    if (input === "" || undefined || NaN || []) return 0;
+
+    input = String(input).split("");
+    input = input.filter(x => DIGITS.indexOf(x) !== -1);
+
+    if (input === []) return 0;
+
+    // console.log(`${input} --- ${input.split(",").length-1}`); //debug
+
+    // for (let i = 0; i < input.split(",").length - 1; i++) {
+    //     input = input.replace(",", "");
+    // }
+    
+    return input;
 }
 
 BUTTONS.forEach(button => {
