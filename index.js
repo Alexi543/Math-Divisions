@@ -1,3 +1,5 @@
+import { DIGITS } from "./vars.js";
+
 const BUTTONS = document.querySelectorAll(".btn");
 const DIVIDERS_OUTPUT = document.getElementById("output-dividers");
 const DIVIDERS_NUMBER = document.getElementById("dividers-num-value");
