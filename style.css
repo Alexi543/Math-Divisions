@@ -36,7 +36,7 @@ body {
     margin-right: auto;
     color: white;
     max-width: 850px;
-    min-width: 670px;
+    min-width: 570px;
 }
 
 #commun-dividers {
@@ -75,6 +75,11 @@ body {
     background-color: rgb(38, 38, 66);
     border-radius: 5px;
     overflow:auto;
+}
+
+.output {
+    overflow: auto;
+    font-size: 15px;
 }
 
 .txt {
