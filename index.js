@@ -1,30 +1,19 @@
-import { DIGITS } from "./vars.js";
+import { string } from "./JavaScript-Tools/string.js";
 
 const BUTTONS = document.querySelectorAll(".btn");
 const DIVIDERS_OUTPUT = document.getElementById("output-dividers");
 const DIVIDERS_NUMBER = document.getElementById("dividers-num-value");
+const COMMUN_OUTPUT = document.getElementById("output-commun-dividers");
+const COMMUN_NUMBER_1 = document.getElementById("commun-dividers-num-1");
+const CONNUM_NUMBER_2 = document.getElementById("commun-dividers-num-1");
 
-const clearInputToNumber = (input) => {
-    input = input.toString();
-
-    if (input === "" || input === undefined || input === []) return 0;
-
-    input = input.toString().split("");
-    input = input.filter(x => DIGITS.indexOf(x) !== -1);
-
-    if (input === []) return 0;
-
-    let cleanInput = "";
-
-    input.forEach(num => cleanInput += num);
-    cleanInput = parseInt(cleanInput);
-    
-    return cleanInput;
-}
+const clearInputToNumber = (input) => string.keepCharacters(input, string.digits);
 
 const foundDividers = (number) => {
     let dividers = [];
-    for (let i = 0; i <= number; i++) if (Math.floor(number / i) * i === number)  dividers.push(i);
+
+    for (let i = 1; i <= number; i++) if (Math.floor(number / i) * i == number) dividers.push(i);
+
     return dividers;
 }
 
@@ -38,6 +27,22 @@ const foundSameDividers = (divider1, divider2) => {
 
 BUTTONS.forEach(button => {
     button.addEventListener("click", event => {
-        if (button.id === "start-dividers") DIVIDERS_OUTPUT.textContent = foundDividers(clearInputToNumber(DIVIDERS_NUMBER.value));
+        if (button.id === "start-dividers") {
+            let out;
+
+            if (DIVIDERS_NUMBER.value.toString().split("").length > 0) {
+                out = foundDividers(clearInputToNumber(DIVIDERS_NUMBER.value));
+                out = out.toString();
+            } else out = "Number Error";
+
+            DIVIDERS_OUTPUT.textContent = out;
+        } else if (button.id === "start-commun-dividers") {
+            let number1 = clearInputToNumber(COMMUN_NUMBER_1.value);
+            let number2 = clearInputToNumber(COMMUN_NUMBER_2.value);
+            let out;
+            
+            
+
+        }
     })
 })
