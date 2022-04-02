@@ -18,18 +18,26 @@ const clearInputToNumber = (input) => {
 
     input.forEach(num => cleanInput += num);
     cleanInput = parseInt(cleanInput);
-
+    
     return cleanInput;
 }
 
 const foundDividers = (number) => {
-    console.log(number);
+    let dividers = [];
+    for (let i = 0; i <= number; i++) if (Math.floor(number / i) * i === number)  dividers.push(i);
+    return dividers;
+}
+
+const foundSameDividers = (divider1, divider2) => {
+    let dividersList1 = foundDividers(divider1);
+    let dividersList2 = foundDividers(divider2);
+    let sameDividers = dividersList1.filter(x => dividersList2.indexOf(x) !== -1);
+
+    return sameDividers;
 }
 
 BUTTONS.forEach(button => {
     button.addEventListener("click", event => {
-        if (button.id === "start-dividers") foundDividers(clearInputToNumber(DIVIDERS_OUTPUT.value));
+        if (button.id === "start-dividers") DIVIDERS_OUTPUT.textContent = foundDividers(clearInputToNumber(DIVIDERS_NUMBER.value));
     })
 })
-
-//pouvoir mettre un nombre ilimite de nombre pour les facteures commun

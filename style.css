@@ -2,7 +2,6 @@
     text-align: end;
     font-size: 90px;
     text-decoration: underline;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     padding-bottom: 10px;
     padding-top: 20px;
@@ -11,7 +10,6 @@
 
 #intro-label {
     text-align: end;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     padding-right: 60px;
     padding-bottom: 15px;
@@ -21,7 +19,6 @@
     text-align: end;
     color: white;
     font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-right: 50px;
     padding-bottom: 170px;
 }
@@ -31,7 +28,6 @@ body {
 }
 
 .zone {
-    font-family: 'Times New Roman', Times, serif;
     padding: 25px;
     padding-bottom: 100px;
     border-radius: 10px;
